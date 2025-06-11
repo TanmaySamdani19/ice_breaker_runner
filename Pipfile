@@ -9,6 +9,8 @@ langchain-community = "*"
 langchain = "*"
 langchainhub = "*"
 black = "*"
+langchain-ollama = "*"
+requests = "*"
 
 [dev-packages]
 
