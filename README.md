@@ -271,15 +271,6 @@ If you encounter any issues or have questions:
 - **Concurrent Users**: Supports multiple simultaneous requests
 - **Uptime**: 99.9% availability target
 
-## 🏆 Acknowledgments
-
-- OpenAI for providing powerful language models
-- LangChain community for excellent AI orchestration tools
-- Flask team for the robust web framework
-- All contributors and beta testers
-
----
-
 **Made with ❤️ for better professional networking**
 
 *IceBreaker Pro - Breaking the ice, one personalized email at a time.*
