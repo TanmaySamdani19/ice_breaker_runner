@@ -61,7 +61,7 @@ Before running this project, make sure you have:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/icebreaker-pro.git
+   git clone git@github.com:TanmaySamdani19/ice_breaker_runner.git
    cd icebreaker-pro
    ```
 
