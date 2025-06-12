@@ -27,11 +27,15 @@ def ice_break_with(name: str) -> Tuple[Summary, str]:
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables=["information"], template=summary_template, partial_variables={"format_instructions": summary_parser.get_format_instructions()}
+        input_variables=["information"],
+        template=summary_template,
+        partial_variables={
+            "format_instructions": summary_parser.get_format_instructions()
+        },
     )
 
     llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
-    chain = summary_prompt_template | llm |summary_parser
+    chain = summary_prompt_template | llm | summary_parser
     res: Summary = chain.invoke(input={"information": linkedin_data})
     return res, linkedin_data.get("photoUrl")
 

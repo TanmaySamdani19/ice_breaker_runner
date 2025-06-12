@@ -34,17 +34,19 @@ def generate_email_route():
     facts = data.get("facts")
     length = data.get("length", "medium")  # short, medium, long
     tone = data.get("tone", "professional")  # professional, friendly, casual
-    purpose = data.get("purpose", "networking")  # networking, job_inquiry, collaboration
-    
+    purpose = data.get(
+        "purpose", "networking"
+    )  # networking, job_inquiry, collaboration
+
     email_content = generate_email(
         name=name,
         summary=summary,
         facts=facts,
         length=length,
         tone=tone,
-        purpose=purpose
+        purpose=purpose,
     )
-    
+
     return jsonify({"email": email_content.to_dict()})
 
 
