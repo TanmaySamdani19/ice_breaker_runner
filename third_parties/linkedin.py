@@ -13,7 +13,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
         # Use mock data URL for testing
         mock_url = "https://gist.githubusercontent.com/TanmaySamdani19/b202c7da85601e33425e4f9c10f49ee7/raw/1611cfe85ce11ee6969b2e037942808e4c10ad5c/tanmay-samdani-scrapin.json"
         response = requests.get(mock_url, timeout=20)
-        
+
         # Check if request was successful
         if response.status_code == 200:
             data = response.json()
@@ -21,8 +21,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
             data = {
                 k: v
                 for k, v in data.items()
-                if v not in ([], "", None)
-                and k not in ["certifications"]
+                if v not in ([], "", None) and k not in ["certifications"]
             }
             return data
         else:
@@ -32,19 +31,19 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
         # Real API call to scrapin.io
         api_endpoint = "https://api.scrapin.io/enrichment/profile"
         api_key = os.environ.get("SCRAPIN_API_KEY")  # Get API key from environment
-        
+
         if not api_key:
             print("Error: SCRAPIN_API_KEY not found in environment variables")
             return None
-            
+
         params = {
             "linkedInUrl": linkedin_profile_url,
-            "apikey": os.environ.get("SCRAPIN_API_KEY")
+            "apikey": os.environ.get("SCRAPIN_API_KEY"),
         }
-        
+
         try:
             response = requests.get(api_endpoint, params=params, timeout=10)
-            
+
             if response.status_code == 200:
                 data = response.json().get("person")
                 if data:
@@ -52,8 +51,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
                     data = {
                         k: v
                         for k, v in data.items()
-                        if v not in ([], "", None)
-                        and k not in ["certifications"]
+                        if v not in ([], "", None) and k not in ["certifications"]
                     }
                     return data
                 else:
@@ -62,7 +60,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
             else:
                 print(f"API Error: {response.status_code} - {response.text}")
                 return None
-                
+
         except requests.exceptions.RequestException as e:
             print(f"Request failed: {e}")
             return None
@@ -70,13 +68,13 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
 
 if __name__ == "__main__":
     print("Testing LinkedIn Profile Scraper...")
-    
+
     # Test with mock data
     result = scrape_linkedin_profile(
-        linkedin_profile_url='https://www.linkedin.com/in/tanmay-samdani-96606b205/', 
-        mock=True
+        linkedin_profile_url="https://www.linkedin.com/in/tanmay-samdani-96606b205/",
+        mock=True,
     )
-    
+
     if result:
         print("✅ Mock data retrieved successfully:")
         print("-" * 50)
