@@ -196,25 +196,6 @@ python ice_breaker.py
 python third_parties/linkedin.py
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-- Follow PEP 8 style guidelines for Python code
-- Add comments for complex functionality
-- Update documentation for new features
-- Test your changes thoroughly
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🛡️ Privacy & Ethics
 
@@ -246,13 +227,6 @@ IceBreaker Pro is designed with privacy and ethical considerations in mind:
 - `SCRAPIN_API_KEY not found`: Add Scrapin.io API key to `.env` file
 - `Network response was not ok`: Check API service availability
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/icebreaker-pro/issues) page
-2. Create a new issue with detailed information
-3. Contact the development team
 
 ## 🔮 Future Enhancements
 
